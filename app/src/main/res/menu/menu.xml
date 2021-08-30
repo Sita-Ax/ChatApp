@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_logout"
+        android:title="Logout"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/search_users"
+        app:showAsAction="ifRoom"
+        android:title="Profille" />
+
+    <item
+        android:id="@+id/pEmail"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/saveddata"
+        android:title="saved chats"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/main"
+        android:title="Go to Main"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/chats"
+        android:icon="@drawable/ic_chat"
+        android:title="Chats" />
+    <item
+        android:id="@+id/status"
+        android:icon="@drawable/ic_status"
+        android:title="Status" />
+    <item
+        android:id="@+id/calls"
+        android:icon="@drawable/ic_call"
+        android:title="Calls" />
+</menu>
