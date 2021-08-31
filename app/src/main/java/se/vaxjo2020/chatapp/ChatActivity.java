@@ -1,23 +1,19 @@
 package se.vaxjo2020.chatapp;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,12 +44,10 @@ public class ChatActivity extends AppCompatActivity {
     FirebaseUser currentUser;
     DatabaseReference myRef;
     Intent intent;
-    public ArrayList<String> arrayList;
+//    public ArrayList<String> arrayList;
 
     ChatAdapter chatAdapter;
     List<Chats> MyChats;
-
-    public String test;
     RecyclerView recyclerView1;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -61,7 +55,6 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
-        Log.d("TAG", "onCreate: CHAT63");
         imageView = findViewById(R.id.imageview_profile);
         username = findViewById(R.id.username_profile);
         sendBtn = findViewById(R.id.btn_send);
@@ -99,24 +92,19 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-        sendBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String msg = msg_editText.getText().toString();
-//                test = msg_editText.getText().toString();
-                DBHelper dbHelper = new DBHelper(ChatActivity.this);
-                if (!msg.equals("")){
-                    DatabaseHelper databaseHelper = new DatabaseHelper(-1,msg);
-//                    test = msg_editText.getText().toString();
-                    msg = msg_editText.getText().toString();
-                    boolean Succes = dbHelper.addData(databaseHelper);
-                    toastMessage("Success");
-                    sendMessage(currentUser.getUid(),userid,msg);
-                }else {
-                    toastMessage("Don't send a empty message. ");
-                }
-                msg_editText.setText("");
+        sendBtn.setOnClickListener(v -> {
+            String msg = msg_editText.getText().toString();
+            DBHelper dbHelper = new DBHelper(ChatActivity.this);
+            if (!msg.equals("")){
+                DatabaseHelper databaseHelper = new DatabaseHelper(-1,msg);
+                msg = msg_editText.getText().toString();
+                boolean Succes = dbHelper.addData(databaseHelper);
+                toastMessage("Success");
+                sendMessage(currentUser.getUid(),userid,msg);
+            }else {
+                toastMessage("Don't send a empty message. ");
             }
+            msg_editText.setText("");
         });
 
     }
@@ -137,7 +125,7 @@ public class ChatActivity extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot DataSnapshot) {
-//                MyChats.clear();
+                MyChats.clear();
                 for (DataSnapshot snapshot : DataSnapshot.getChildren()){
                     Chats chats = snapshot.getValue(Chats.class);
                     assert chats != null;

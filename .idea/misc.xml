@@ -25,16 +25,19 @@
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_create_password.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_saved_chat.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/chat_left.xml" value="0.165625" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/chat_right.xml" value="0.165625" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/fragment_chats.xml" value="0.165625" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/fragment_users.xml" value="0.1515625" />
+        <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/menu_item.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/menu_photo.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/toolbar_layout.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/layout/user_item.xml" value="0.165625" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/menu/chatmenu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Rosita/AndroidStudioProjects/ChatApp/app/src/main/res/menu/menu_photo.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/Rosita/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_expandable_list_item_1.xml" value="0.19270833333333334" />
       </map>
     </option>

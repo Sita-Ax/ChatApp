@@ -1,23 +1,18 @@
 package se.vaxjo2020.chatapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.List;
+import com.google.firebase.auth.FirebaseAuth;
 
 import se.vaxjo2020.chatapp.DbHelper.DBHelper;
 import se.vaxjo2020.chatapp.model.DatabaseHelper;
@@ -27,9 +22,9 @@ public class SavedChatActivity extends AppCompatActivity {
     private Button deleteBtn, show;
     private ListView listView;
 
-    private FirebaseUser currentUser;
+//    private FirebaseUser currentUser;
     private DBHelper dbHelper;
-    List<DatabaseHelper> allmessages;
+//    List<DatabaseHelper> allmessages;
     ArrayAdapter chatArrayAdapter;
 
     @Override
@@ -42,27 +37,16 @@ public class SavedChatActivity extends AppCompatActivity {
         show = findViewById(R.id.show);
         dbHelper = new DBHelper(SavedChatActivity.this);
         Showall();
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toastMessage("This is the deleted");
-            }
+        deleteBtn.setOnClickListener(v -> toastMessage("This is the deleted"));
+        show.setOnClickListener(v -> {
+            dbHelper = new DBHelper(SavedChatActivity.this);
+            Showall();
+            toastMessage("Show all");
         });
-        show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dbHelper = new DBHelper(SavedChatActivity.this);
-                Showall();
-                toastMessage("Show all");
-            }
-        });
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                DatabaseHelper selectMessage = (DatabaseHelper) parent.getItemAtPosition(position);
-                dbHelper.deleteData(selectMessage);
-                Showall();
-            }
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            DatabaseHelper selectMessage = (DatabaseHelper) parent.getItemAtPosition(position);
+            dbHelper.deleteData(selectMessage);
+            Showall();
         });
     }
 
